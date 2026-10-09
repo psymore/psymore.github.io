@@ -61,6 +61,15 @@ describe('project data', () => {
     expect(byId['world-of-cards'].poster).toBeNull();
     expect(byId.grocery.poster).toBeNull();
     expect(byId.grocery.links).toEqual([]);
-    expect(projects.some((p) => p.video)).toBe(false);
+  });
+
+  it('has preview videos only for the approved projects, each with a poster and a file', () => {
+    const withVideo = projects.filter((p) => p.video).map((p) => p.id);
+    expect(withVideo).toEqual(['metronome', 'wsm']);
+    for (const project of projects) {
+      if (!project.video) continue;
+      expect(project.poster, project.id).not.toBeNull();
+      expect(existsSync(join('public', project.video)), project.video).toBe(true);
+    }
   });
 });

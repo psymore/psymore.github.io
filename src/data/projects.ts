@@ -70,6 +70,7 @@ export const projects: Project[] = [
       },
     },
     tags: ['TypeScript', 'Web Audio API', 'Canvas', 'Vite', 'PWA', 'Tauri 2'],
+    video: '/media/metronome.mp4',
     poster: {
       base: '/media/metronome',
       alt: {
@@ -108,6 +109,7 @@ export const projects: Project[] = [
       },
     },
     tags: ['TypeScript', 'VS Code Extension API', 'Node.js'],
+    video: '/media/wsm.mp4',
     poster: {
       base: '/media/wsm',
       alt: {

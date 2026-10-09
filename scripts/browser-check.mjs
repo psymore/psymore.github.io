@@ -110,7 +110,12 @@ for (const [locale, path] of Object.entries(pages)) {
       .filter((r) => r.name.endsWith('.js'))
       .reduce((sum, r) => sum + r.encodedBodySize, 0),
   );
-  if (js > 10_000) fail(where, `${js} bytes of JS loaded without any interactive island`);
+  // Two preview-video cards hydrate React: ~250 KB raw (this server does not gzip), ~80 KB on Pages.
+  if (js > 300_000) fail(where, `${js} bytes of JS loaded`);
+  const videosLoaded = await page.evaluate(
+    () => performance.getEntriesByType('resource').filter((r) => r.name.endsWith('.mp4')).length,
+  );
+  if (videosLoaded) fail(where, `${videosLoaded} preview video(s) requested before any interaction`);
 
   const lastAction = await page.evaluate(() => document.querySelector('.profile .lang').getBoundingClientRect().bottom);
   if (lastAction > viewports.desktop.height) fail(where, `profile does not fit: ends at ${Math.round(lastAction)}px`);

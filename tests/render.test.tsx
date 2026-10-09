@@ -63,8 +63,10 @@ describe('prerendered page', () => {
     expect(tr.html).toContain('Ekran görüntüleri yakında');
   });
 
-  it('ships no React to the browser while no project has a video', () => {
-    expect(en.html).not.toContain('data-hydrate');
+  it('marks exactly the two cards with a preview video for hydration', () => {
+    expect(en.html.match(/data-hydrate/g)?.length).toBe(2);
+    expect(en.html.match(/<video\b/g)?.length).toBe(2);
+    expect(en.html).not.toContain('.mp4');
   });
 
   it('marks a card with a video for hydration and never preloads it', () => {
