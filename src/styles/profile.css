@@ -78,7 +78,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent-2);
+  background: var(--accent);
 }
 
 .profile .actions {

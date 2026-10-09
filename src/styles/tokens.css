@@ -9,8 +9,8 @@
   --text-2: #9a9eaa;
   --line: rgb(242 242 245 / 0.08);
   --line-strong: rgb(242 242 245 / 0.16);
-  --accent: #a992ff;
-  --accent-2: #69d8cc;
+  --accent: #69d8cc;
+  --accent-hover: #8be6dc;
   --on-accent: #0d0f12;
 
   /* Shape */
@@ -46,13 +46,11 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --lift: -4px;
   --zoom: 1.02;
-  --spread: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root {
     --lift: 0px;
     --zoom: 1;
-    --spread: 0;
   }
 }

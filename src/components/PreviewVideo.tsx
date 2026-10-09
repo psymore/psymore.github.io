@@ -92,8 +92,20 @@ export function PreviewVideo({ src, labels }: Props) {
         onPause={() => setPlaying(false)}
       />
       {auto === false && (
-        <button type="button" className="preview-toggle" aria-pressed={playing} onClick={playing ? stop : start}>
-          {playing ? labels.pause : labels.play}
+        <button
+          type="button"
+          className="preview-toggle"
+          aria-pressed={playing}
+          aria-label={playing ? labels.pause : labels.play}
+          onClick={playing ? stop : start}
+        >
+          <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            {playing ? (
+              <path d="M3 2h4v12H3zM9 2h4v12H9z" />
+            ) : (
+              <path d="M4 2l10 6-10 6z" />
+            )}
+          </svg>
         </button>
       )}
     </>

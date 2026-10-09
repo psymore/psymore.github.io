@@ -128,7 +128,7 @@ a:hover {
 }
 
 .btn--primary:hover {
-  background: #bba9ff;
+  background: var(--accent-hover);
   color: var(--on-accent);
 }
 

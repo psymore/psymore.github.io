@@ -44,8 +44,6 @@ export function ProjectMedia({ project, locale, eager }: Props) {
   const demo = project.links.find((link) => link.kind === 'demo');
   return (
     <div className={`media media--${project.device}`}>
-      <span className="media__plate media__plate--back" aria-hidden="true" />
-      <span className="media__plate media__plate--mid" aria-hidden="true" />
       <div className="media__frame">
         {demo && project.device === 'desktop' && (
           <div className="media__bar" aria-hidden="true">
