@@ -1,0 +1,58 @@
+:root {
+  color-scheme: dark;
+
+  /* Color */
+  --bg: #0d0f12;
+  --surface: #181b22;
+  --surface-2: #1f232c;
+  --text: #f2f2f5;
+  --text-2: #9a9eaa;
+  --line: rgb(242 242 245 / 0.08);
+  --line-strong: rgb(242 242 245 / 0.16);
+  --accent: #a992ff;
+  --accent-2: #69d8cc;
+  --on-accent: #0d0f12;
+
+  /* Shape */
+  --r-sm: 12px;
+  --r-md: 14px;
+  --r-lg: 18px;
+
+  /* Space, 4px base */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 72px;
+  --s-9: 112px;
+
+  /* Type */
+  --font: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-name: clamp(2.5rem, 1.9rem + 1.6vw, 3.25rem);
+  --fs-lead: 1.125rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.375rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-tag: 0.8125rem;
+
+  /* Motion: three durations, one curve */
+  --t-fast: 220ms;
+  --t-base: 320ms;
+  --t-slow: 550ms;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --lift: -4px;
+  --zoom: 1.02;
+  --spread: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --lift: 0px;
+    --zoom: 1;
+    --spread: 0;
+  }
+}

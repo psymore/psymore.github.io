@@ -1,0 +1,155 @@
+.portrait {
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  object-fit: cover;
+}
+
+.portrait--empty {
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.profile__name {
+  margin-top: var(--s-5);
+  font-size: var(--fs-name);
+  font-weight: 650;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.profile__role {
+  margin-top: var(--s-2);
+  font-size: var(--fs-lead);
+  font-weight: 500;
+}
+
+.profile__tagline {
+  margin-top: var(--s-5);
+  max-width: 28ch;
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+  text-wrap: balance;
+}
+
+.profile__intro {
+  margin-top: var(--s-3);
+  max-width: 40ch;
+  color: var(--text-2);
+  font-size: var(--fs-small);
+}
+
+.strengths {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--s-5);
+}
+
+.strength {
+  padding: 3px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  font-size: var(--fs-tag);
+  font-weight: 500;
+}
+
+.strength--secondary {
+  border-color: var(--line);
+  color: var(--text-2);
+}
+
+.profile__location {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  color: var(--text-2);
+  font-size: var(--fs-small);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-2);
+}
+
+.profile .actions {
+  margin-top: var(--s-4);
+}
+
+.lang {
+  display: flex;
+  gap: var(--s-1);
+  margin-top: var(--s-3);
+  font-size: var(--fs-small);
+}
+
+.lang a {
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+  border-radius: var(--r-sm);
+  color: var(--text-2);
+  text-decoration: none;
+}
+
+.lang a[aria-current='page'] {
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* Phones and tablets: a compact hero, portrait beside the name. */
+@media (max-width: 959px) {
+  .profile__inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--s-4);
+    align-items: center;
+    padding: var(--s-6) 0 var(--s-6);
+  }
+
+  .profile__inner > * {
+    grid-column: 1 / -1;
+  }
+
+  .profile__inner > .portrait {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 56px;
+    height: 56px;
+  }
+
+  .profile__inner > .profile__name,
+  .profile__inner > .profile__role {
+    grid-column: 2;
+    margin-top: 0;
+  }
+
+  .profile__name {
+    font-size: 2rem;
+    align-self: end;
+  }
+
+  .profile__role {
+    align-self: start;
+    font-size: 1rem;
+  }
+
+  .profile__tagline {
+    margin-top: var(--s-4);
+  }
+
+  .strengths {
+    margin-top: var(--s-4);
+  }
+}

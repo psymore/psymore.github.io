@@ -1,0 +1,127 @@
+.section + .section {
+  margin-top: var(--s-8);
+}
+
+.section__title {
+  margin-bottom: var(--s-5);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* More work */
+.more__item {
+  padding: var(--s-5) 0;
+  border-top: 1px solid var(--line);
+}
+
+.more__item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.more__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.more__summary {
+  max-width: 62ch;
+  margin-top: var(--s-1);
+  color: var(--text-2);
+}
+
+.more__tags {
+  margin-top: var(--s-2);
+  color: var(--text-2);
+  font-size: var(--fs-tag);
+}
+
+.more__item .links {
+  margin-top: var(--s-3);
+}
+
+/* Experience */
+.jobs {
+  display: grid;
+  gap: var(--s-6);
+}
+
+.job__company {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.job__meta {
+  margin-top: 2px;
+  color: var(--text-2);
+  font-size: var(--fs-small);
+}
+
+.job__bullets {
+  display: grid;
+  gap: var(--s-2);
+  margin-top: var(--s-3);
+}
+
+.job__bullets li {
+  position: relative;
+  max-width: 66ch;
+  padding-left: var(--s-4);
+}
+
+.job__bullets li::before {
+  content: '';
+  position: absolute;
+  top: 0.75em;
+  left: 0;
+  width: 6px;
+  height: 1px;
+  background: var(--text-2);
+}
+
+/* Education */
+.degrees {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.degree {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--s-3);
+}
+
+.degree__title {
+  font-weight: 500;
+}
+
+.degree__meta {
+  color: var(--text-2);
+}
+
+/* Contact */
+.contact__text {
+  max-width: 48ch;
+  color: var(--text-2);
+}
+
+.contact__email {
+  display: inline-block;
+  margin-top: var(--s-3);
+  font-size: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+
+.contact .actions {
+  margin-top: var(--s-5);
+}
+
+.footer {
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--line);
+  color: var(--text-2);
+  font-size: var(--fs-small);
+}
